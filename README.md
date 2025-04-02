@@ -62,8 +62,3 @@ This project uses the SpaceX API v3. Key endpoints used are:
 - `/launches` - Get all launches
 - `/launches/{flight_number}` - Get specific launch by flight number
 - `/launches?launch_year={year}` - Get launches for a specific year
-
-## Author
-
-- Student ID: 101205359
-- Course: COMP3133 - Full Stack Development II
