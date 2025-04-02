@@ -25,16 +25,16 @@ The project follows a component-based architecture:
 
 Here are screenshots of the application:
 
-![Mission List](./screenshots/1.png)
+![Mission List](./src/screenshots/1.png)
 *Screenshot 1: Main mission list view*
 
-![Mission Filtering](./screenshots/2.png)
+![Mission Filtering](./src/screenshots/2.png)
 *Screenshot 2: Mission filtering functionality*
 
-![Mission Details](./screenshots/3.png)
+![Mission Details](./src/screenshots/3.png)
 *Screenshot 3: Detailed view of a selected mission*
 
-![Mobile View](./screenshots/4.png)
+![Mobile View](./src/screenshots/4.png)
 *Screenshot 4: Responsive design on mobile devices*
 
 ## Technical Implementation
