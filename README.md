@@ -21,6 +21,22 @@ The project follows a component-based architecture:
 - **Mission Filter Component:** Provides UI for applying various filters to the mission list
 - **SpaceX API Service:** Handles all communication with the SpaceX API
 
+## Screenshots
+
+Here are screenshots of the application:
+
+![Mission List](./screenshots/1.png)
+*Screenshot 1: Main mission list view*
+
+![Mission Filtering](./screenshots/2.png)
+*Screenshot 2: Mission filtering functionality*
+
+![Mission Details](./screenshots/3.png)
+*Screenshot 3: Detailed view of a selected mission*
+
+![Mobile View](./screenshots/4.png)
+*Screenshot 4: Responsive design on mobile devices*
+
 ## Technical Implementation
 
 - Built with Angular 19.2.4
