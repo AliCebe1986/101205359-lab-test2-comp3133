@@ -1,0 +1,71 @@
+<div class="filter-container">
+  <h3>Filter Missions</h3>
+  
+  <!-- Year filter -->
+  <div class="filter-section">
+    <mat-form-field appearance="outline">
+      <mat-label>Launch Year</mat-label>
+      <input matInput [(ngModel)]="selectedYear" placeholder="e.g. 2020">
+      <button *ngIf="selectedYear" matSuffix mat-icon-button aria-label="Clear" (click)="selectedYear=''">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="applyYearFilter(selectedYear)">Apply Year Filter</button>
+  </div>
+
+  <!-- Launch Success/Failure Filter -->
+  <div class="filter-section">
+    <h4>Launch</h4>
+    <div class="filter-radio-group">
+      <label class="radio-label">
+        <input type="radio" id="launchSuccessful" name="launchStatus" 
+               [checked]="launchSuccess === true"
+               (change)="applyLaunchFilter(true)">
+        <span>Successful</span>
+      </label>
+      
+      <label class="radio-label">
+        <input type="radio" id="launchFailed" name="launchStatus" 
+               [checked]="launchSuccess === false"
+               (change)="applyLaunchFilter(false)">
+        <span>Failed</span>
+      </label>
+      
+      <button *ngIf="launchSuccess !== null" mat-icon-button color="warn" (click)="applyLaunchFilter(null)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Landing Success/Failure Filter -->
+  <div class="filter-section">
+    <h4>Landing</h4>
+    <div class="filter-radio-group">
+      <label class="radio-label">
+        <input type="radio" id="landSuccessful" name="landStatus" 
+               [checked]="landSuccess === true"
+               (change)="applyLandFilter(true)">
+        <span>Successful</span>
+      </label>
+      
+      <label class="radio-label">
+        <input type="radio" id="landFailed" name="landStatus" 
+               [checked]="landSuccess === false"
+               (change)="applyLandFilter(false)">
+        <span>Failed</span>
+      </label>
+      
+      <button *ngIf="landSuccess !== null" mat-icon-button color="warn" (click)="applyLandFilter(null)">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  </div>
+
+  <!-- Clear all filters button -->
+  <div class="filter-actions">
+    <button mat-raised-button color="warn" (click)="clearFilter()" 
+            [disabled]="!selectedYear && launchSuccess === null && landSuccess === null">
+      Clear All Filters
+    </button>
+  </div>
+</div>

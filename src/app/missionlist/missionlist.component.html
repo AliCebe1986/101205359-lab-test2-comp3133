@@ -1,0 +1,38 @@
+<mat-toolbar color="primary">
+  <span>SpaceX Mission Launches</span>
+</mat-toolbar>
+
+<div class="container">
+  <h2>Mission List</h2>
+  
+  <!-- Use our new mission filter component -->
+  <app-missionfilter
+    [selectedYear]="selectedYear"
+    [launchSuccess]="launchSuccess"
+    [landSuccess]="landSuccess"
+    (yearChanged)="onYearChanged($event)"
+    (launchSuccessChanged)="onLaunchSuccessChanged($event)"
+    (landSuccessChanged)="onLandSuccessChanged($event)"
+    (filtersCleared)="onFiltersCleared()">
+  </app-missionfilter>
+
+  <div *ngIf="filteredMissions.length > 0; else noMissions">
+    <ul class="mission-grid">
+      <li *ngFor="let mission of filteredMissions" class="mission-box">
+        <a [routerLink]="['/mission', mission.flight_number]">
+          <img 
+            [src]="mission.links.mission_patch_small || 'assets/placeholder.png'" 
+            alt="mission patch"
+          />
+          <h1>{{ mission.mission_name }}</h1>
+          <h3>{{ mission.launch_year }}</h3>
+          <p>{{ mission.details || 'No details available' }}</p>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <ng-template #noMissions>
+    <p>Loading missions or no missions found...</p>
+  </ng-template>
+</div>

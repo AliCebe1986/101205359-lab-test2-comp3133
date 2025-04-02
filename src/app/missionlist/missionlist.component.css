@@ -1,0 +1,104 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.mission-grid {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  gap: 20px;
+}
+
+.mission-box {
+  width: calc(33.333% - 20px);
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.mission-box:hover {
+  transform: translateY(-5px);
+}
+
+.mission-box a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.mission-box img {
+  width: 100px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 15px;
+  object-fit: contain;
+}
+
+.mission-box h1 {
+  font-size: 1.4rem;
+  margin: 10px 0;
+  text-align: center;
+  color: #333;
+}
+
+.mission-box h3 {
+  font-size: 1.1rem;
+  margin: 5px 0;
+  text-align: center;
+  color: #666;
+}
+
+.mission-box p {
+  font-size: 0.9rem;
+  color: #777;
+  line-height: 1.4;
+  margin-top: 10px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-indicator {
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.success {
+  background-color: #e6f4ea;
+  color: #0d652d;
+}
+
+.failure {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+
+/* Responsive design */
+@media (max-width: 992px) {
+  .mission-box {
+    width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 576px) {
+  .mission-box {
+    width: 100%;
+  }
+}
